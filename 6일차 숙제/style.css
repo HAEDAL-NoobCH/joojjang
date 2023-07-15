@@ -1,0 +1,146 @@
+/* 폰트 설치 */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    
+    scroll-behavior: smooth;
+}
+
+body {
+    /* 배경 색깔 넣기 */
+    min-height: 100vh;
+    background: linear-gradient(#2b1055, #7597de);
+    overflow-x: hidden;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between; /* 가로 위치 */
+    align-items: center; /* 세로 위치 */
+    
+    z-index: 100;
+}
+
+header .logo /* .: class */ {
+    /* Minjoo */ 
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 2em; /* 부모(body) 태그 글씨의 2배  */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header ul /* 상단 탭 */ {
+    display: flex;
+    justify-content: center; /* 가로 위치 */
+    align-items: center; /* 세로 위치 */
+}
+
+header ul li /* 상단 탭 개별 */ {
+    list-style: none;
+    margin-left: 20px;
+}
+
+header li a /* 상단 탭 글자 하나하나 */ {
+    text-decoration: none;
+    padding: 6px 15px;
+    color: white;
+    border-radius: 20px;
+}
+header ul li a:hover {
+    background: white;
+    color: #2b1055;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    height: 100vh; /*보이는 영역의 >높이< 차지 영역*/
+    padding: 100px;
+
+    display: flex;
+    justify-content: center; /* 가로 위치 */
+    align-items: center; /* 세로 위치 */
+
+    overflow: hidden; /* 요소의 콘텐츠가 너무 커서 요소의 블록에 맞출 수 없을 때 - 안 보이게 */
+}
+
+/* 배경 연결하기? */
+section::before {
+    /* 선택한 요소의 첫 자식으로 의사 요소 생성*/
+    /* content 속성을 사용하여 요소에 장식용 콘텐츠 추가할 때 사용 */
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: lenear-gradient(to top, #1c0522, transparent);
+    z-index: 1000;
+}
+
+section img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 이미지 비율 속성 설정: 비율 유지해 넓이와 높이 채우기 (그림 잘림) */
+    
+    pointer-events: none; /* 버튼의 포인터 이벤트를 살라기 위해 이미지의 포인터 이벤트를 none으로 설정*/
+}
+
+section img#moon /* #: id */ {
+    mix-blend-mode: screen; /* 달 주위에 블러 효과 */
+}
+
+section img#mountains_front {
+    z-index: 10;
+}
+
+#text /* id */ { 
+    /* Moon Light */
+    position: absolute;
+    color: white;
+    font-size: 7.5vw; /* 보이는 영역의 >너비< 차지 역역*/
+    z-index: 9;
+
+    right: -350px;
+}
+
+#btn {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 30px;
+    border-radius: 40px;
+    background: white;
+    color: #2b1055;
+    font-size: 1.5em;
+    z-index: 9;
+    transform: translateY(100px); /* Y축 100px 이동 */
+}
+
+.sec {
+    position: relative;
+    padding: 100px;
+    background: #1c0522;
+}
+.sec h2 {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    color: white;
+}
+.sec p {
+    font-size: 1em;
+    color: white;
+}
+
